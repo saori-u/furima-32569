@@ -44,7 +44,7 @@
 - belong_to_active_hash :shipping_date
 
 
-## purchaser テーブル
+## purchases テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -58,12 +58,12 @@
 - has_one    :address
 
 
-## address テーブル
+## addresses テーブル
 
 | Column        | Type       | Options                       |
 | ------------- | ---------- | ----------------------------- |
 | postcode      | string     | null: false,                  |
-| prefecture_id | integer    | null: false,                  |
+| area_id       | integer    | null: false,                  |
 | city          | string     | null: false,                  |
 | house_num     | string     | null: false,                  |
 | building      | string     |                               |
