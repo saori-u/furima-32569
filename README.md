@@ -35,7 +35,7 @@
 
 ### Association
 
-- has_one    :purchases
+- has_one    :purchaser
 - belongs_to :user
 - belong_to_active_hash :category
 - belong_to_active_hash :state
@@ -60,15 +60,15 @@
 
 ## address テーブル
 
-| Column        | Type       | Options      |
-| ------------- | ---------- | ------------ |
-| postcode      | string     | null: false, |
-| prefecture_id | integer    | null: false, |
-| city          | string     | null: false, |
-| house_num     | string     | null: false, |
-| building      | string     |              |
-| phone_num     | string     | null: false, |
-| block         | string     | null: false, |
+| Column        | Type       | Options                       |
+| ------------- | ---------- | ----------------------------- |
+| postcode      | string     | null: false,                  |
+| prefecture_id | integer    | null: false,                  |
+| city          | string     | null: false,                  |
+| house_num     | string     | null: false,                  |
+| building      | string     |                               |
+| phone_num     | string     | null: false,                  |
+| purchase      | references | null:false,foreign_key: true  |
 
 ### Association
 
