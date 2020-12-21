@@ -22,6 +22,7 @@
 
 ## items テーブル
 
+
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
 | name                  | string     | null: false                    |
@@ -35,6 +36,7 @@
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
+
 
 - has_many   :comments
 - has_one    :purchases
@@ -48,6 +50,7 @@
 
 ## comments テーブル
 
+
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
 | name                  | string     | null: false                    |
@@ -62,11 +65,13 @@
 
 ### Association
 
+
 - belongs_to :user
 - belongs_to :item
 
 
 ## purchaser テーブル
+
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -75,6 +80,7 @@
 
 ### Association
 
+
 - belongs_to :user
 - belongs_to :item
 - has_one    :credit_card
@@ -82,6 +88,7 @@
 
 
 ## credit_cards テーブル
+
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | card_number      | integer    | null:false, unique: true       |
@@ -96,6 +103,7 @@
 
 
 ## address テーブル
+
 
 | Column        | Type       | Options      |
 | ------------- | ---------- | ------------ |
