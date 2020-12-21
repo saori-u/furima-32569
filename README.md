@@ -35,7 +35,7 @@
 
 ### Association
 
-- has_one    :purchaser
+- has_one    :purchase
 - belongs_to :user
 - belong_to_active_hash :category
 - belong_to_active_hash :state
