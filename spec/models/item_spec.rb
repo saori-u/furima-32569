@@ -54,12 +54,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Delivery time Select")
       end
       it 'priceが300未満だと登録できない' do
-        @item.price = 30
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("Price Out of setting range")
       end
       it 'priceが10000000以上だと登録できない' do
-        @item.price = 30_000_000
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price Out of setting range")
       end
