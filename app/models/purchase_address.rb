@@ -7,7 +7,7 @@ class PurchaseAddress
     validates :area_id,   numericality: { other_than: 1 }
     validates :city
     validates :house_num
-    validates :phone_num,  length: { maximum: 11 }
+    validates :phone_num,  format: { with: /\A\d{10,11}\z/ }
     validates :user_id
     validates :item_id
     validates :token

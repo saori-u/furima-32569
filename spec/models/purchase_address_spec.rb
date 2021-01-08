@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe PurchaseAddress, type: :model do
   before do
+    user = FactoryBot.create(:user)
+    item = FactoryBot.create(:item)
     @purchase_address = FactoryBot.build(:purchase_address, user_id: user.id, item_id: item.id)
-    @user = FactoryBot.build(:user)
-    @item = FactoryBot.build(:item)
     sleep(1)
   end
 
@@ -40,9 +40,9 @@ RSpec.describe PurchaseAddress, type: :model do
       end
 
       it 'area_idが1では登録できない' do
-        @purchase_address.prefecture_id = 1
+        @purchase_address.area_id = 1
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include('Area Select')
+        expect(@purchase_address.errors.full_messages).to include('Area must be other than 1')
       end
 
       it 'cityが空では登録できない' do
