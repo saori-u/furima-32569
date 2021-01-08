@@ -7,7 +7,5 @@ FactoryBot.define do
     building          { '建物名' }
     phone_num         { Faker::Base.numerify('0##########') }
     token             {"tok_abcdefghijk00000000000000000"}
-    association :user
-    association :item
   end
 end

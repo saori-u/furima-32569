@@ -81,6 +81,12 @@ RSpec.describe PurchaseAddress, type: :model do
         expect(@purchase_address.errors.full_messages).to include('Phone num is invalid')
       end
 
+      it 'phone_numが英数混合では登録できない' do
+        @purchase_address.phone_num = '090abcd1234'
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include('Phone num is invalid')
+      end
+
       it 'tokenが空では登録できない' do
         @purchase_address.token = nil
         @purchase_address.valid?
